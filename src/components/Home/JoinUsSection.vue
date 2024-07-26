@@ -1,6 +1,6 @@
 <script setup>
 import { ChevronRightIcon, Sparkles } from "lucide-vue-next";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 </script>
 
 <template>
