@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { ChevronRightIcon } from "lucide-vue-next";
 </script>
 
