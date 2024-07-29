@@ -1,8 +1,10 @@
 <template>
   <div>
-    <HeroSection />
-    <ServicesSection />
-    <JoinUsSection />
+    <main>
+      <HeroSection />
+      <ServicesSection />
+      <JoinUsSection />
+    </main>
   </div>
 </template>
 <script setup>
