@@ -1,5 +1,6 @@
 <template>
   <div class="grid gap-8">
+    <div v-for="(blog, index) in blogs" :key="index">
     <div
       class="flex flex-col md:flex-row gap-4 bg-background p-4 rounded-lg shadow border-2 border-gray-200"
     >
@@ -13,14 +14,13 @@
       <div class="flex-1 grid gap-2">
         <a
           href="#"
-          class="block text-lg font-medium transition-colors hover:text-primary"
+          class="block text-lg  font-medium transition-colors hover:text-primary"
           prefetch="{false}"
         >
-          Breaking News: Earthquake Hits California
+        {{ blog.title }}
         </a>
-        <p class="text-gray-700">
-          A powerful earthquake has struck California, causing widespread damage
-          and disrupting transportation.
+        <p class="text-gray-700 ">
+          {{ blog.description }}
         </p>
         <div class="flex justify-end px-4 mt-2 h-fit">
           <Badge variant="outline"> 5 </Badge>
@@ -30,12 +30,22 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </template>
 <script setup>
 import Badge from "../ui/badge/Badge.vue";
 import Button from "../ui/button/Button.vue";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-
+import { defineProps, onMounted } from 'vue';
 import { ThumbsUp, ThumbsDown } from "lucide-vue-next";
+const props = defineProps({
+  blogs: {
+    type: Array,
+    required: true,
+  },
+});
+onMounted(() => {
+  console.log('Received blogs grid:', props.blogs);
+});
 </script>
