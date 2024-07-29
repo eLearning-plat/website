@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { authGuard } from "@auth0/auth0-vue";
 
 const routes = [
   { path: "/", name: "home", component: () => import("../pages/HomePage.vue") },
@@ -11,6 +12,7 @@ const routes = [
     path: "/news/:id",
     name: "newesDetailsPage",
     component: () => import("../pages/NewsDetailsPage.vue"),
+    beforeEnter: authGuard,
   },
   {
     path: "/Blogs",
