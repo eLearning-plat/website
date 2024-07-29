@@ -29,7 +29,7 @@ import { Button } from "../ui/button";
             </li>
           </ul>
           <div class="flex w-full flex-col justify-center gap-4 lg:w-4/5">
-            <Button class="group h-12 w-1/3 flex">
+            <Button class="group h-12 w-1/3 flex mt-5">
               Become a Student
               <ChevronRightIcon
                 class="w-5 h-5 transition ease-in-out delay-150 group-hover:translate-x-5 hover:scale-110 duration-300"
@@ -53,7 +53,7 @@ import { Button } from "../ui/button";
             </li>
           </ul>
           <div class="flex w-full flex-col justify-center gap-4 lg:w-4/5">
-            <Button class="group h-12 w-1/3 flex">
+            <Button class="group h-12 w-1/3 flex mt-5">
               Become a Teacher
               <ChevronRightIcon
                 class="w-5 h-5 transition ease-in-out delay-150 group-hover:translate-x-5 hover:scale-110 duration-300"
