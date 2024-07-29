@@ -1,8 +1,24 @@
 <template>
   <div>
+    <div class="flex justify-end container px-4 pt-8 sm:px-6 lg:px-8">
+      
+      <Button class="  "
+    :class="{ 'switch-on': isOn, 'switch-off': !isOn }"
+    @click="toggleSwitch"
+    id="airplane-mode"
+  >
+  <template v-if="isOn">
+      <LayoutGrid />
+    </template>
+    <template v-else>
+      <LayoutList />
+    </template>
+      </Button>
+      <Button  variant="outline" class=" mr-10 ml-4 border-blue-600 border"> <ArrowDownUp class="text-blue-600 " /></Button></div>
+
   <div class="flex w-full">
     <main class="container flex justify-between px-4 py-8 sm:px-6 lg:px-8">
-      <div class="w-64 hidden md:block mt-7 mr-10 ">
+      <div class="w-64 hidden md:block mr-10 ">
       <Card>
         <CardHeader>
           <CardTitle>Categories</CardTitle>
@@ -55,20 +71,7 @@
     </div>
       <div>
       
-     <div class="flex justify-between">
-      <Button  variant="outline" class="mt-7 mb-5 "> <ArrowDownUp  /></Button>
-        <Button class="mt-7 mr-10 mb-5 "
-      :class="{ 'switch-on': isOn, 'switch-off': !isOn }"
-      @click="toggleSwitch"
-      id="airplane-mode"
-    >
-    <template v-if="isOn">
-        <LayoutGrid />
-      </template>
-      <template v-else>
-        <LayoutList />
-      </template>
-        </Button></div>
+   
         <!-- <Label>Switch State: {{ isOn ? "Grid" : "List" }}</Label> -->
         <div
             class=" text-center grid gap-8 flex-grow mr-10"
@@ -112,6 +115,6 @@ const toggleSwitch = () => {
   flex-grow: 1;
 }
 .w-64 {
-  width: 16rem; /* Width of the sidebar */
+  width: 16rem;
 }
 </style>
