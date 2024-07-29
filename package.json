@@ -15,6 +15,7 @@
     "@unovis/vue": "^1.4.3",
     "@vee-validate/zod": "^4.13.2",
     "@vueuse/core": "^10.11.0",
+    "axios": "^1.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-vue": "^8.1.7",
@@ -28,6 +29,7 @@
     "vue": "^3.4.31",
     "vue-router": "^4.4.0",
     "vue-sonner": "^1.1.4",
+    "vuex": "^4.0.2",
     "zod": "^3.23.8"
   },
   "devDependencies": {
