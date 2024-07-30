@@ -25,7 +25,7 @@
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
-              <a
+              <router-link
                 v-for="item in navigation"
                 :key="item.name"
                 :href="item.href"
@@ -36,7 +36,7 @@
                   'rounded-md px-3 py-2 text-sm font-medium',
                 ]"
                 :aria-current="item.current ? 'page' : undefined"
-                >{{ item.name }}</a
+                >{{ item.name }}</router-link
               >
             </div>
           </div>
@@ -81,7 +81,7 @@
               >
                 <MenuItem v-slot="{ active }">
                   <a
-                    href="#"
+                    href="http://localhost:3001"
                     :class="[
                       active ? 'bg-gray-100' : '',
                       'block px-4 py-2 text-sm text-gray-700',
