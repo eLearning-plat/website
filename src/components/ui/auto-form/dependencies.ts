@@ -32,10 +32,13 @@ export default function useDependencies(
   function getSourceValue(dep: Dependency<any>) {
     const source = dep.sourceField as string
     const index = getIndexIfArray(fieldName) ?? -1
+    // @ts-expect-error
     const [sourceLast, ...sourceInitial] = source.split('.').toReversed()
+    // @ts-expect-error
     const [_targetLast, ...targetInitial] = (dep.targetField as string).split('.').toReversed()
 
     if (index >= 0 && sourceInitial.join(',') === targetInitial.join(',')) {
+      // @ts-expect-error
       const [_currentLast, ...currentInitial] = fieldName.split('.').toReversed()
       return getFromPath(form.value, currentInitial.join('.') + sourceLast)
     }
