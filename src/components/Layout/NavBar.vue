@@ -28,7 +28,7 @@
               <router-link
                 v-for="item in navigation"
                 :key="item.name"
-                :href="item.href"
+                :to="item.href"
                 :class="[
                   item.current
                     ? 'bg-gray-900 text-white'
@@ -81,7 +81,7 @@
               >
                 <MenuItem v-slot="{ active }">
                   <a
-                    href="http://localhost:3001"
+                    :href="apiUrl"
                     :class="[
                       active ? 'bg-gray-100' : '',
                       'block px-4 py-2 text-sm text-gray-700',
@@ -89,16 +89,7 @@
                     >Your Profile</a
                   >
                 </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-100' : '',
-                      'block px-4 py-2 text-sm text-gray-700',
-                    ]"
-                    >Settings</a
-                  >
-                </MenuItem>
+               
                 <MenuItem v-slot="{ active }">
                   <Button
                     @click="logout"
@@ -153,7 +144,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 import LoginButton from "../auth/LoginButton.vue";
 import { useAuth0 } from "@auth0/auth0-vue";
 import Button from "../ui/button/Button.vue";
-
+const apiUrl = import.meta.env.VITE_APP_API_URL_LOCAL;
 const navigation = [
   { name: "Dashboard", href: "/", current: true },
   { name: "News", href: "/news", current: false },
